@@ -1,6 +1,6 @@
 # DHT22Gen3 Library
 
-There's been a problem with DHT22 libraries on Gen 3 devices (Argon, Boron, Xenon). Interrupt latency causes it to miss-interpret bits for interrupt-based libraries (like PietteTech_DHT) and bit-banging isn't much better. The narrowest pulse is 26-28 us. 
+There's been a problem with DHT22 libraries on Gen 3 devices (Argon, Boron, Xenon). Interrupt latency causes it to misinterpret bits for interrupt-based libraries (like PietteTech_DHT) and bit-banging isn't much better. The narrowest pulse is 26-28 us. 
 
 I created a new library, DHT22Gen3_RK, that takes an entirely different approach. It uses the nRF52 I2S peripheral not to capture sound data, but as a DMA-based digital signal sampler. It can grab a full DHT22 sample into a 360 byte buffer at a 512 kHz sampling rate. It doesn't require any interrupts, no timers are required, and it's completely non-blocking. It doesn't have to disable interrupts or thread swapping. 
 
