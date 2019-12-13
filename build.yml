@@ -1,0 +1,9 @@
+- build: examples/1-simple
+  argon: [1.3.1, 1.4.0, latest]
+  boron: [latest]
+  xenon: [latest]
+- build: examples/2-tester
+  argon: [latest]
+- build: examples/3-publish
+  argon: [latest]
+  
