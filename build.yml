@@ -6,4 +6,6 @@
   argon: [latest]
 - build: examples/3-publish
   argon: [latest]
+- build: examples/4-simple-DHT11
+  argon: [latest]
   

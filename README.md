@@ -14,6 +14,11 @@ The API is callback/lambda based, as it takes about 24 milliseconds to query a D
 - License: MIT
 - [Full browsable API documentation](https://rickkas7.github.io/DHT22Gen3_RK/)
 
+As of version 0.0.2, it now supports:
+
+- DHT22 (and AM2302)
+- DHT11
+
 ## Example Usage
 
 ```
@@ -87,6 +92,12 @@ The `getSample()` method can also take a C++11 lambda, which is handy for callin
 
 ```
 
+When using a DHT11:
+
+```
+		dht.getSample(A3, sampleCallback, &DHT22Gen3::sensorTypeDHT11);
+```
+
 ## More details
 
 Include the `DHT22Gen3_RK` library and include its header file:
@@ -127,6 +138,10 @@ Use the `dht.getSample()` method above to query the sensor. It will take 24 mill
 
 
 ## Version History
+
+#### 0.0.2 (2019-12-17)
+
+- Support for DHT11. Actually it worked before, but it wasn't tested and there wasn't an example for it.
 
 #### 0.0.1 (2019-12-13)
 
