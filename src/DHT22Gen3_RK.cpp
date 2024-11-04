@@ -174,7 +174,14 @@ void DHT22Gen3::loop() {
 			pinMode(dhtPin, INPUT);
 
 			// We let the pull-up pull the pin high again, and it should stay that way for 20-40 us then the device takes over
-			Hal_Pin_Info *pinMap = HAL_Pin_Map();
+			Hal_Pin_Info *pinMap =
+#if (SYSTEM_VERSION < SYSTEM_VERSION_ALPHA(5, 0, 0, 1))
+        		HAL_Pin_Map();
+#elif (SYSTEM_VERSION >= SYSTEM_VERSION_ALPHA(6, 2, 0, 0))
+        		hal_pin_map();
+#else // SYSTEM_VERSION
+        		Hal_Pin_Map();
+#endif // SYSTEM_VERSION			
 
 			nrfx_i2s_config_t config = NRFX_I2S_DEFAULT_CONFIG;
 

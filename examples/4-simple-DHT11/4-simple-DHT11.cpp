@@ -25,7 +25,7 @@ void loop() {
 	if (millis() - lastCheck >= CHECK_INTERVAL) {
 		lastCheck = millis();
 
-		dht.getSample(A3, sampleCallback, &DHT22Gen3::sensorTypeDHT11);
+		dht.getSample(A2, sampleCallback, &DHT22Gen3::sensorTypeDHT11);
 	}
 
 }
