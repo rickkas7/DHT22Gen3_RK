@@ -141,6 +141,10 @@ Use the `dht.getSample()` method above to query the sensor. It will take 24 mill
 
 ## Version History
 
+#### 0.0.4 (2025-10-03)
+
+- Fixed a linker error for nrfx_i2s_init, nrfx_i2s_stop, and others with Device OS 6.3.3 and later.
+
 #### 0.0.3 (2024-11-04)
 
 - Fix compile error on newer versions of Device OS.
